@@ -22,6 +22,7 @@
 #    vendor/toshiba/tostab03/proprietary/lib/libseccameraadaptor.so:obj/lib/libseccameraadaptor.so
 
 PRODUCT_COPY_FILES += \
+    vendor/toshiba/tostab03/proprietary/framework/filterfw.jar:system/framework/filterfw.jar \
     vendor/toshiba/tostab03/proprietary/etc/vold.fstab:system/etc/vold.fstab \
     vendor/toshiba/tostab03/proprietary/etc/gps/gpsconfig.xml:system/etc/gps/gpsconfig.xml \
     vendor/toshiba/tostab03/proprietary/etc/toshdmi:system/etc/toshdmi \
@@ -82,6 +83,7 @@ PRODUCT_COPY_FILES += \
     vendor/toshiba/tostab03/proprietary/lib/hw/audio.primary.default.so:system/lib/hw/audio.primary.default.so \
     vendor/toshiba/tostab03/proprietary/lib/libnvmm_asfparser.so:system/lib/libnvmm_asfparser.so \
     vendor/toshiba/tostab03/proprietary/lib/libnvodm_dtvtuner.so:system/lib/libnvodm_dtvtuner.so \
+    vendor/toshiba/tostab03/proprietary/lib/libi2c_ctl.so:system/lib/libi2c_ctl.so \
     vendor/toshiba/tostab03/proprietary/lib/libnvsm.so:system/lib/libnvsm.so \
     vendor/toshiba/tostab03/proprietary/lib/libaudioservice.so:system/lib/libaudioservice.so \
     vendor/toshiba/tostab03/proprietary/lib/libnvmmlite_video.so:system/lib/libnvmmlite_video.so \
@@ -101,18 +103,6 @@ PRODUCT_COPY_FILES += \
     vendor/toshiba/tostab03/proprietary/lib/libnvodm_misc.so:system/lib/libnvodm_misc.so \
     vendor/toshiba/tostab03/proprietary/lib/libnvaviparserhal.so:system/lib/libnvaviparserhal.so \
     vendor/toshiba/tostab03/proprietary/lib/libnvtvmr.so:system/lib/libnvtvmr.so \
-    vendor/toshiba/tostab03/proprietary/lib/vendor/lib/drm/libdrmwvmplugin.so:system/lib/vendor/lib/drm/libdrmwvmplugin.so \
-    vendor/toshiba/tostab03/proprietary/lib/vendor/lib/libWVStreamControlAPI_L3.so:system/lib/vendor/lib/libWVStreamControlAPI_L3.so \
-    vendor/toshiba/tostab03/proprietary/lib/vendor/lib/libwvdrm_L3.so:system/lib/vendor/lib/libwvdrm_L3.so \
-    vendor/toshiba/tostab03/proprietary/lib/vendor/lib/libwvm.so:system/lib/vendor/lib/libwvm.so \
-    vendor/toshiba/tostab03/proprietary/lib/vendor/firmware/bcm4330/fw_bcmdhd_p2p.bin:system/lib/vendor/firmware/bcm4330/fw_bcmdhd_p2p.bin \
-    vendor/toshiba/tostab03/proprietary/lib/vendor/firmware/bcm4330/fw_bcmdhd.bin:system/lib/vendor/firmware/bcm4330/fw_bcmdhd.bin \
-    vendor/toshiba/tostab03/proprietary/lib/vendor/firmware/bcm4330/fw_bcmdhd_apsta.bin:system/lib/vendor/firmware/bcm4330/fw_bcmdhd_apsta.bin \
-    vendor/toshiba/tostab03/proprietary/lib/vendor/firmware/bcm4329/fw_bcmdhd_p2p.bin:system/lib/vendor/firmware/bcm4329/fw_bcmdhd_p2p.bin \
-    vendor/toshiba/tostab03/proprietary/lib/vendor/firmware/bcm4329/fw_bcmdhd.bin:system/lib/vendor/firmware/bcm4329/fw_bcmdhd.bin \
-    vendor/toshiba/tostab03/proprietary/lib/vendor/firmware/bcm4329/fw_bcmdhd_apsta.bin:system/lib/vendor/firmware/bcm4329/fw_bcmdhd_apsta.bin \
-    vendor/toshiba/tostab03/proprietary/lib/vendor/firmware/fw_bcm4329_apsta.bin:system/lib/vendor/firmware/fw_bcm4329_apsta.bin \
-    vendor/toshiba/tostab03/proprietary/lib/vendor/firmware/fw_bcm4329.bin:system/lib/vendor/firmware/fw_bcm4329.bin \
     vendor/toshiba/tostab03/proprietary/lib/libnvmm_image.so:system/lib/libnvmm_image.so \
     vendor/toshiba/tostab03/proprietary/lib/libeglstreamtexture.so:system/lib/libeglstreamtexture.so \
     vendor/toshiba/tostab03/proprietary/lib/libnvmm_aviparser.so:system/lib/libnvmm_aviparser.so \
@@ -133,6 +123,7 @@ PRODUCT_COPY_FILES += \
     vendor/toshiba/tostab03/proprietary/lib/libnvwsi.so:system/lib/libnvwsi.so \
     vendor/toshiba/tostab03/proprietary/lib/libcgdrv.so:system/lib/libcgdrv.so \
     vendor/toshiba/tostab03/proprietary/lib/libnvmmlite_audio.so:system/lib/libnvmmlite_audio.so \
+    vendor/toshiba/tostab03/proprietary/lib/libDmiService.so:system/lib/libDmiService.so \
     vendor/toshiba/tostab03/proprietary/lib/libnvhdmi3dplay_jni.so:system/lib/libnvhdmi3dplay_jni.so \
     vendor/toshiba/tostab03/proprietary/lib/libnvddk_2d_v2.so:system/lib/libnvddk_2d_v2.so \
     vendor/toshiba/tostab03/proprietary/lib/libnvmm_camera.so:system/lib/libnvmm_camera.so \
@@ -172,6 +163,11 @@ PRODUCT_COPY_FILES += \
     vendor/toshiba/tostab03/proprietary/vendor/firmware/bcm4329/fw_bcmdhd_apsta.bin:system/vendor/firmware/bcm4329/fw_bcmdhd_apsta.bin \
     vendor/toshiba/tostab03/proprietary/vendor/firmware/fw_bcm4329_apsta.bin:system/vendor/firmware/fw_bcm4329_apsta.bin \
     vendor/toshiba/tostab03/proprietary/vendor/firmware/fw_bcm4329.bin:system/vendor/firmware/fw_bcm4329.bin \
+    vendor/toshiba/tostab03/proprietary/bin/dmiserver:system/bin/dmiserver \
+    vendor/toshiba/tostab03/proprietary/bin/setup_fs:system/bin/setup_fs \
+    vendor/toshiba/tostab03/proprietary/bin/rild:system/bin/rild \
+    vendor/toshiba/tostab03/proprietary/bin/bdaddr2:system/bin/bdaddr2 \
+    vendor/toshiba/tostab03/proprietary/bin/nvcpud:system/bin/nvcpud \
     vendor/toshiba/tostab03/proprietary/usr/share/zoneinfo/zoneinfo.idx:system/usr/share/zoneinfo/zoneinfo.idx \
     vendor/toshiba/tostab03/proprietary/usr/share/zoneinfo/zoneinfo.dat:system/usr/share/zoneinfo/zoneinfo.dat \
     vendor/toshiba/tostab03/proprietary/usr/share/zoneinfo/zoneinfo.version:system/usr/share/zoneinfo/zoneinfo.version \
