@@ -23,6 +23,7 @@
 
 PRODUCT_COPY_FILES += \
     vendor/toshiba/tostab03/proprietary/framework/filterfw.jar:system/framework/filterfw.jar \
+    vendor/toshiba/tostab03/proprietary/framework/com.toshiba.ec.jar:system/framework/com.toshiba.ec.jar \
     vendor/toshiba/tostab03/proprietary/etc/vold.fstab:system/etc/vold.fstab \
     vendor/toshiba/tostab03/proprietary/etc/gps/gpsconfig.xml:system/etc/gps/gpsconfig.xml \
     vendor/toshiba/tostab03/proprietary/etc/toshdmi:system/etc/toshdmi \
@@ -155,14 +156,11 @@ PRODUCT_COPY_FILES += \
     vendor/toshiba/tostab03/proprietary/vendor/lib/libWVStreamControlAPI_L3.so:system/vendor/lib/libWVStreamControlAPI_L3.so \
     vendor/toshiba/tostab03/proprietary/vendor/lib/libwvdrm_L3.so:system/vendor/lib/libwvdrm_L3.so \
     vendor/toshiba/tostab03/proprietary/vendor/lib/libwvm.so:system/vendor/lib/libwvm.so \
-    vendor/toshiba/tostab03/proprietary/vendor/firmware/bcm4330/fw_bcmdhd_p2p.bin:system/vendor/firmware/bcm4330/fw_bcmdhd_p2p.bin \
-    vendor/toshiba/tostab03/proprietary/vendor/firmware/bcm4330/fw_bcmdhd.bin:system/vendor/firmware/bcm4330/fw_bcmdhd.bin \
-    vendor/toshiba/tostab03/proprietary/vendor/firmware/bcm4330/fw_bcmdhd_apsta.bin:system/vendor/firmware/bcm4330/fw_bcmdhd_apsta.bin \
-    vendor/toshiba/tostab03/proprietary/vendor/firmware/bcm4329/fw_bcmdhd_p2p.bin:system/vendor/firmware/bcm4329/fw_bcmdhd_p2p.bin \
-    vendor/toshiba/tostab03/proprietary/vendor/firmware/bcm4329/fw_bcmdhd.bin:system/vendor/firmware/bcm4329/fw_bcmdhd.bin \
-    vendor/toshiba/tostab03/proprietary/vendor/firmware/bcm4329/fw_bcmdhd_apsta.bin:system/vendor/firmware/bcm4329/fw_bcmdhd_apsta.bin \
+    vendor/toshiba/tostab03/proprietary/vendor/firmware/fw_bcmdhd_p2p.bin:system/vendor/firmware/fw_bcmdhd_p2p.bin \
+    vendor/toshiba/tostab03/proprietary/vendor/firmware/fw_bcmdhd.bin:system/vendor/firmware/fw_bcmdhd.bin \
     vendor/toshiba/tostab03/proprietary/vendor/firmware/fw_bcm4329_apsta.bin:system/vendor/firmware/fw_bcm4329_apsta.bin \
     vendor/toshiba/tostab03/proprietary/vendor/firmware/fw_bcm4329.bin:system/vendor/firmware/fw_bcm4329.bin \
+    vendor/toshiba/tostab03/proprietary/vendor/firmware/fw_bcmdhd_apsta.bin:system/vendor/firmware/fw_bcmdhd_apsta.bin \
     vendor/toshiba/tostab03/proprietary/bin/dmiserver:system/bin/dmiserver \
     vendor/toshiba/tostab03/proprietary/bin/setup_fs:system/bin/setup_fs \
     vendor/toshiba/tostab03/proprietary/bin/rild:system/bin/rild \
