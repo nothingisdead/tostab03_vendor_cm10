@@ -32,11 +32,9 @@ PRODUCT_COPY_FILES += \
     vendor/toshiba/tostab03/proprietary/etc/bluetooth/blacklist.conf:system/etc/bluetooth/blacklist.conf \
     vendor/toshiba/tostab03/proprietary/etc/bluetooth/input.conf:system/etc/bluetooth/input.conf \
     vendor/toshiba/tostab03/proprietary/etc/bluetooth/network.conf:system/etc/bluetooth/network.conf \
-    vendor/toshiba/tostab03/proprietary/etc/nvram_4330.txt:system/etc/nvram_4330.txt \
     vendor/toshiba/tostab03/proprietary/etc/nvcamera.conf:system/etc/nvcamera.conf \
     vendor/toshiba/tostab03/proprietary/etc/model_frontal.xml:system/etc/model_frontal.xml \
     vendor/toshiba/tostab03/proprietary/etc/gps.conf:system/etc/gps.conf \
-    vendor/toshiba/tostab03/proprietary/etc/nvram_4329.txt:system/etc/nvram_4329.txt \
     vendor/toshiba/tostab03/proprietary/etc/egfv.cfg:system/etc/egfv.cfg \
     vendor/toshiba/tostab03/proprietary/etc/firmware/nvmm_reference.axf:system/etc/firmware/nvmm_reference.axf \
     vendor/toshiba/tostab03/proprietary/etc/firmware/nvmm_jpegdec.axf:system/etc/firmware/nvmm_jpegdec.axf \
@@ -93,6 +91,7 @@ PRODUCT_COPY_FILES += \
     vendor/toshiba/tostab03/proprietary/lib/libnvparser.so:system/lib/libnvparser.so \
     vendor/toshiba/tostab03/proprietary/lib/libnvmm_writer.so:system/lib/libnvmm_writer.so \
     vendor/toshiba/tostab03/proprietary/lib/libnvmm_contentpipe.so:system/lib/libnvmm_contentpipe.so \
+    vendor/toshiba/tostab03/proprietary/lib/libasound.so:system/lib/libasound.so \
     vendor/toshiba/tostab03/proprietary/lib/libnvomxilclient.so:system/lib/libnvomxilclient.so \
     vendor/toshiba/tostab03/proprietary/lib/libnvasfparserhal.so:system/lib/libnvasfparserhal.so \
     vendor/toshiba/tostab03/proprietary/lib/libGLESv2.so:system/lib/libGLESv2.so \
@@ -106,7 +105,6 @@ PRODUCT_COPY_FILES += \
     vendor/toshiba/tostab03/proprietary/lib/libeglstreamtexture.so:system/lib/libeglstreamtexture.so \
     vendor/toshiba/tostab03/proprietary/lib/libnvmm_aviparser.so:system/lib/libnvmm_aviparser.so \
     vendor/toshiba/tostab03/proprietary/lib/modules/tun.ko:system/lib/modules/tun.ko \
-    vendor/toshiba/tostab03/proprietary/lib/modules/bcmdhd.ko:system/lib/modules/bcmdhd.ko \
     vendor/toshiba/tostab03/proprietary/lib/modules/scsi_wait_scan.ko:system/lib/modules/scsi_wait_scan.ko \
     vendor/toshiba/tostab03/proprietary/lib/modules/bcm4329.ko:system/lib/modules/bcm4329.ko \
     vendor/toshiba/tostab03/proprietary/lib/libnvrm_graphics.so:system/lib/libnvrm_graphics.so \
@@ -123,6 +121,7 @@ PRODUCT_COPY_FILES += \
     vendor/toshiba/tostab03/proprietary/lib/libcgdrv.so:system/lib/libcgdrv.so \
     vendor/toshiba/tostab03/proprietary/lib/libnvmmlite_audio.so:system/lib/libnvmmlite_audio.so \
     vendor/toshiba/tostab03/proprietary/lib/libDmiService.so:system/lib/libDmiService.so \
+    vendor/toshiba/tostab03/proprietary/lib/libmllite.so:system/lib/libmllite.so \
     vendor/toshiba/tostab03/proprietary/lib/libnvhdmi3dplay_jni.so:system/lib/libnvhdmi3dplay_jni.so \
     vendor/toshiba/tostab03/proprietary/lib/libnvddk_2d_v2.so:system/lib/libnvddk_2d_v2.so \
     vendor/toshiba/tostab03/proprietary/lib/libnvmm_camera.so:system/lib/libnvmm_camera.so \
@@ -156,33 +155,15 @@ PRODUCT_COPY_FILES += \
     vendor/toshiba/tostab03/proprietary/vendor/lib/libwvm.so:system/vendor/lib/libwvm.so \
     vendor/toshiba/tostab03/proprietary/vendor/firmware/fw_bcm4329_apsta.bin:system/vendor/firmware/fw_bcm4329_apsta.bin \
     vendor/toshiba/tostab03/proprietary/vendor/firmware/fw_bcm4329.bin:system/vendor/firmware/fw_bcm4329.bin \
+    vendor/toshiba/tostab03/proprietary/bin/wpa_supplicant:system/bin/wpa_supplicant \
+    vendor/toshiba/tostab03/proprietary/bin/iwconfig:system/bin/iwconfig \
     vendor/toshiba/tostab03/proprietary/bin/dmiserver:system/bin/dmiserver \
     vendor/toshiba/tostab03/proprietary/bin/setup_fs:system/bin/setup_fs \
+    vendor/toshiba/tostab03/proprietary/bin/glgps_nvidiaTegra2android:system/bin/glgps_nvidiaTegra2android \
     vendor/toshiba/tostab03/proprietary/bin/rild:system/bin/rild \
+    vendor/toshiba/tostab03/proprietary/bin/sensorservice:system/bin/sensorservice \
     vendor/toshiba/tostab03/proprietary/bin/bdaddr2:system/bin/bdaddr2 \
     vendor/toshiba/tostab03/proprietary/bin/nvcpud:system/bin/nvcpud \
-    vendor/toshiba/tostab03/proprietary/usr/share/zoneinfo/zoneinfo.idx:system/usr/share/zoneinfo/zoneinfo.idx \
-    vendor/toshiba/tostab03/proprietary/usr/share/zoneinfo/zoneinfo.dat:system/usr/share/zoneinfo/zoneinfo.dat \
-    vendor/toshiba/tostab03/proprietary/usr/share/zoneinfo/zoneinfo.version:system/usr/share/zoneinfo/zoneinfo.version \
-    vendor/toshiba/tostab03/proprietary/usr/share/bmd/RFFspeed_501.bmd:system/usr/share/bmd/RFFspeed_501.bmd \
-    vendor/toshiba/tostab03/proprietary/usr/share/bmd/RFFstd_501.bmd:system/usr/share/bmd/RFFstd_501.bmd \
-    vendor/toshiba/tostab03/proprietary/usr/share/alsa/cards/aliases.conf:system/usr/share/alsa/cards/aliases.conf \
-    vendor/toshiba/tostab03/proprietary/usr/share/alsa/alsa.conf:system/usr/share/alsa/alsa.conf \
-    vendor/toshiba/tostab03/proprietary/usr/share/alsa/pcm/surround71.conf:system/usr/share/alsa/pcm/surround71.conf \
-    vendor/toshiba/tostab03/proprietary/usr/share/alsa/pcm/dsnoop.conf:system/usr/share/alsa/pcm/dsnoop.conf \
-    vendor/toshiba/tostab03/proprietary/usr/share/alsa/pcm/default.conf:system/usr/share/alsa/pcm/default.conf \
-    vendor/toshiba/tostab03/proprietary/usr/share/alsa/pcm/surround40.conf:system/usr/share/alsa/pcm/surround40.conf \
-    vendor/toshiba/tostab03/proprietary/usr/share/alsa/pcm/surround41.conf:system/usr/share/alsa/pcm/surround41.conf \
-    vendor/toshiba/tostab03/proprietary/usr/share/alsa/pcm/surround50.conf:system/usr/share/alsa/pcm/surround50.conf \
-    vendor/toshiba/tostab03/proprietary/usr/share/alsa/pcm/center_lfe.conf:system/usr/share/alsa/pcm/center_lfe.conf \
-    vendor/toshiba/tostab03/proprietary/usr/share/alsa/pcm/side.conf:system/usr/share/alsa/pcm/side.conf \
-    vendor/toshiba/tostab03/proprietary/usr/share/alsa/pcm/front.conf:system/usr/share/alsa/pcm/front.conf \
-    vendor/toshiba/tostab03/proprietary/usr/share/alsa/pcm/dpl.conf:system/usr/share/alsa/pcm/dpl.conf \
-    vendor/toshiba/tostab03/proprietary/usr/share/alsa/pcm/dmix.conf:system/usr/share/alsa/pcm/dmix.conf \
-    vendor/toshiba/tostab03/proprietary/usr/share/alsa/pcm/iec958.conf:system/usr/share/alsa/pcm/iec958.conf \
-    vendor/toshiba/tostab03/proprietary/usr/share/alsa/pcm/rear.conf:system/usr/share/alsa/pcm/rear.conf \
-    vendor/toshiba/tostab03/proprietary/usr/share/alsa/pcm/surround51.conf:system/usr/share/alsa/pcm/surround51.conf \
-    vendor/toshiba/tostab03/proprietary/usr/share/alsa/pcm/modem.conf:system/usr/share/alsa/pcm/modem.conf \
     vendor/toshiba/tostab03/proprietary/usr/icu/icudt46l.dat:system/usr/icu/icudt46l.dat \
     vendor/toshiba/tostab03/proprietary/usr/keychars/Virtual.kcm:system/usr/keychars/Virtual.kcm \
     vendor/toshiba/tostab03/proprietary/usr/keychars/Generic.kcm:system/usr/keychars/Generic.kcm \
@@ -207,7 +188,5 @@ PRODUCT_COPY_FILES += \
     vendor/toshiba/tostab03/proprietary/usr/keylayout/Vendor_044f_Product_d007.kl:system/usr/keylayout/Vendor_044f_Product_d007.kl \
     vendor/toshiba/tostab03/proprietary/usr/keylayout/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
     vendor/toshiba/tostab03/proprietary/usr/idc/atmel-maxtouch.idc:system/usr/idc/atmel-maxtouch.idc \
-    vendor/toshiba/tostab03/proprietary/usr/idc/qwerty.idc:system/usr/idc/qwerty.idc \
     vendor/toshiba/tostab03/proprietary/usr/idc/egalax_i2c.idc:system/usr/idc/egalax_i2c.idc \
-    vendor/toshiba/tostab03/proprietary/usr/idc/qwerty2.idc:system/usr/idc/qwerty2.idc \
     vendor/toshiba/tostab03/proprietary/usr/idc/panjit_touch.idc:system/usr/idc/panjit_touch.idc
