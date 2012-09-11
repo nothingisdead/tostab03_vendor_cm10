@@ -1,0 +1,7 @@
+#!/system/bin/sh
+case $1 in
+  "--help") echo "Usage:\n1. 'reboot'\n  reboot\n2. 'reboot recovery'\n  reboot into recovery mode\n3. 'reboot --help'\n  show usage";;
+  "recovery") setprop sys.shutdown.requested 1recovery;busybox reboot ;;
+  *) busybox reboot;;
+esac
+
