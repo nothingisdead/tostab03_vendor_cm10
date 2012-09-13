@@ -1,0 +1,13 @@
+#!/system/bin/sh
+case $1 in
+  "--help") echo "
+Usage:  
+  1. 'setboot'  
+    clear boot flag  
+  2. 'setboot recovery'  
+    set recovery mode flag  
+  3. 'reboot --help'  
+    show usage";;  
+  "recovery") echo "boot-recovery" > /dev/block/mmcblk0p5;;
+  *) echo "" > /dev/block/mmcblk0p5;;
+esac

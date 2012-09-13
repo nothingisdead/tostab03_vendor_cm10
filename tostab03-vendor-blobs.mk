@@ -23,8 +23,10 @@
 
 PRODUCT_COPY_FILES += \
     vendor/toshiba/tostab03/proprietary/etc/vold.fstab:system/etc/vold.fstab \
+    vendor/toshiba/tostab03/proprietary/etc/media_codecs.xml:system/etc/media_codecs.xml \
     vendor/toshiba/tostab03/proprietary/etc/gps/gpsconfig.xml:system/etc/gps/gpsconfig.xml \
     vendor/toshiba/tostab03/proprietary/etc/toshdmi:system/etc/toshdmi \
+    vendor/toshiba/tostab03/proprietary/etc/audio_effects.conf:system/etc/audio_effects.conf \
     vendor/toshiba/tostab03/proprietary/etc/nvcamera.conf:system/etc/nvcamera.conf \
     vendor/toshiba/tostab03/proprietary/etc/model_frontal.xml:system/etc/model_frontal.xml \
     vendor/toshiba/tostab03/proprietary/etc/gps.conf:system/etc/gps.conf \
@@ -50,12 +52,10 @@ PRODUCT_COPY_FILES += \
     vendor/toshiba/tostab03/proprietary/etc/apns-conf.xml:system/etc/apns-conf.xml \
     vendor/toshiba/tostab03/proprietary/etc/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
     vendor/toshiba/tostab03/proprietary/etc/wv.cfg:system/etc/wv.cfg \
-    vendor/toshiba/tostab03/proprietary/etc/dhcpcd/dhcpcd.conf:system/etc/dhcpcd/dhcpcd.conf \
-    vendor/toshiba/tostab03/proprietary/etc/dhcpcd/dhcpcd-run-hooks:system/etc/dhcpcd/dhcpcd-run-hooks \
-    vendor/toshiba/tostab03/proprietary/etc/dhcpcd/dhcpcd-hooks/20-dns.conf:system/etc/dhcpcd/dhcpcd-hooks/20-dns.conf \
-    vendor/toshiba/tostab03/proprietary/etc/dhcpcd/dhcpcd-hooks/95-configured:system/etc/dhcpcd/dhcpcd-hooks/95-configured \
     vendor/toshiba/tostab03/proprietary/etc/nvram.txt:system/etc/nvram.txt \
+    vendor/toshiba/tostab03/proprietary/etc/media_profiles.xml:system/etc/media_profiles.xml \
     vendor/toshiba/tostab03/proprietary/etc/asound.conf:system/etc/asound.conf \
+    vendor/toshiba/tostab03/proprietary/lib/libmpl.so:system/lib/libmpl.so \
     vendor/toshiba/tostab03/proprietary/lib/libnvrm.so:system/lib/libnvrm.so \
     vendor/toshiba/tostab03/proprietary/lib/libnvcpud_client.so:system/lib/libnvcpud_client.so \
     vendor/toshiba/tostab03/proprietary/lib/libnvmm_misc.so:system/lib/libnvmm_misc.so \
@@ -136,15 +136,14 @@ PRODUCT_COPY_FILES += \
     vendor/toshiba/tostab03/proprietary/lib/libnvtestresults.so:system/lib/libnvtestresults.so \
     vendor/toshiba/tostab03/proprietary/vendor/firmware/fw_bcm4329_apsta.bin:system/vendor/firmware/fw_bcm4329_apsta.bin \
     vendor/toshiba/tostab03/proprietary/vendor/firmware/fw_bcm4329.bin:system/vendor/firmware/fw_bcm4329.bin \
-    vendor/toshiba/tostab03/proprietary/bin/iwconfig:system/bin/iwconfig \
+    vendor/toshiba/tostab03/proprietary/bin/immvibed:system/bin/immvibed \
     vendor/toshiba/tostab03/proprietary/bin/dmiserver:system/bin/dmiserver \
     vendor/toshiba/tostab03/proprietary/bin/setup_fs:system/bin/setup_fs \
     vendor/toshiba/tostab03/proprietary/bin/glgps_nvidiaTegra2android:system/bin/glgps_nvidiaTegra2android \
     vendor/toshiba/tostab03/proprietary/bin/rild:system/bin/rild \
-    vendor/toshiba/tostab03/proprietary/bin/reboot:system/bin/reboot \
     vendor/toshiba/tostab03/proprietary/bin/sensorservice:system/bin/sensorservice \
-    vendor/toshiba/tostab03/proprietary/bin/brcm_patchram_plus:system/bin/brcm_patchram_plus \
     vendor/toshiba/tostab03/proprietary/bin/bdaddr2:system/bin/bdaddr2 \
+    vendor/toshiba/tostab03/proprietary/bin/setboot:system/bin/setboot \
     vendor/toshiba/tostab03/proprietary/bin/nvcpud:system/bin/nvcpud \
     vendor/toshiba/tostab03/proprietary/usr/share/alsa/cards/aliases.conf:system/usr/share/alsa/cards/aliases.conf \
     vendor/toshiba/tostab03/proprietary/usr/share/alsa/alsa.conf:system/usr/share/alsa/alsa.conf \
