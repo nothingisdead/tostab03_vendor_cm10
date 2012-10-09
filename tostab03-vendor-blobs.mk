@@ -59,7 +59,6 @@ PRODUCT_COPY_FILES += \
     vendor/toshiba/tostab03/proprietary/lib/libnvcpud_client.so:system/lib/libnvcpud_client.so \
     vendor/toshiba/tostab03/proprietary/lib/libnvmm_misc.so:system/lib/libnvmm_misc.so \
     vendor/toshiba/tostab03/proprietary/lib/hw/gps.tostab03.so:system/lib/hw/gps.tostab03.so \
-    vendor/toshiba/tostab03/proprietary/lib/hw/sensors.tostab03.so:system/lib/hw/sensors.tostab03.so \
     vendor/toshiba/tostab03/proprietary/lib/hw/nfc.tegra.so:system/lib/hw/nfc.tegra.so \
     vendor/toshiba/tostab03/proprietary/lib/hw/gralloc.tegra.so:system/lib/hw/gralloc.tegra.so \
     vendor/toshiba/tostab03/proprietary/lib/hw/hwcomposer.tegra.so:system/lib/hw/hwcomposer.tegra.so \
@@ -134,6 +133,7 @@ PRODUCT_COPY_FILES += \
     vendor/toshiba/tostab03/proprietary/lib/libnvtestresults.so:system/lib/libnvtestresults.so \
     vendor/toshiba/tostab03/proprietary/vendor/firmware/fw_bcm4329_apsta.bin:system/vendor/firmware/fw_bcm4329_apsta.bin \
     vendor/toshiba/tostab03/proprietary/vendor/firmware/fw_bcm4329.bin:system/vendor/firmware/fw_bcm4329.bin \
+    vendor/toshiba/tostab03/proprietary/app/com.eclipsim.gpsstatus2-1.apk:system/app/com.eclipsim.gpsstatus2-1.apk \
     vendor/toshiba/tostab03/proprietary/bin/immvibed:system/bin/immvibed \
     vendor/toshiba/tostab03/proprietary/bin/dmiserver:system/bin/dmiserver \
     vendor/toshiba/tostab03/proprietary/bin/setup_fs:system/bin/setup_fs \
