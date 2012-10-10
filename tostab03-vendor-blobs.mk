@@ -55,10 +55,12 @@ PRODUCT_COPY_FILES += \
     vendor/toshiba/tostab03/proprietary/etc/nvram.txt:system/etc/nvram.txt \
     vendor/toshiba/tostab03/proprietary/etc/media_profiles.xml:system/etc/media_profiles.xml \
     vendor/toshiba/tostab03/proprietary/etc/asound.conf:system/etc/asound.conf \
+    vendor/toshiba/tostab03/proprietary/lib/libmpl.so:system/lib/libmpl.so \
     vendor/toshiba/tostab03/proprietary/lib/libnvrm.so:system/lib/libnvrm.so \
     vendor/toshiba/tostab03/proprietary/lib/libnvcpud_client.so:system/lib/libnvcpud_client.so \
     vendor/toshiba/tostab03/proprietary/lib/libnvmm_misc.so:system/lib/libnvmm_misc.so \
     vendor/toshiba/tostab03/proprietary/lib/hw/gps.tostab03.so:system/lib/hw/gps.tostab03.so \
+    vendor/toshiba/tostab03/proprietary/lib/hw/sensors.tostab03.so:system/lib/hw/sensors.tostab03.so \
     vendor/toshiba/tostab03/proprietary/lib/hw/nfc.tegra.so:system/lib/hw/nfc.tegra.so \
     vendor/toshiba/tostab03/proprietary/lib/hw/gralloc.tegra.so:system/lib/hw/gralloc.tegra.so \
     vendor/toshiba/tostab03/proprietary/lib/hw/hwcomposer.tegra.so:system/lib/hw/hwcomposer.tegra.so \
@@ -78,6 +80,7 @@ PRODUCT_COPY_FILES += \
     vendor/toshiba/tostab03/proprietary/lib/libnvmm_writer.so:system/lib/libnvmm_writer.so \
     vendor/toshiba/tostab03/proprietary/lib/libnvmm_contentpipe.so:system/lib/libnvmm_contentpipe.so \
     vendor/toshiba/tostab03/proprietary/lib/libnvomxilclient.so:system/lib/libnvomxilclient.so \
+    vendor/toshiba/tostab03/proprietary/lib/libmlplatform.so:system/lib/libmlplatform.so \
     vendor/toshiba/tostab03/proprietary/lib/libnvasfparserhal.so:system/lib/libnvasfparserhal.so \
     vendor/toshiba/tostab03/proprietary/lib/libGLESv2.so:system/lib/libGLESv2.so \
     vendor/toshiba/tostab03/proprietary/lib/libnvodm_query.so:system/lib/libnvodm_query.so \
@@ -104,6 +107,7 @@ PRODUCT_COPY_FILES += \
     vendor/toshiba/tostab03/proprietary/lib/libcgdrv.so:system/lib/libcgdrv.so \
     vendor/toshiba/tostab03/proprietary/lib/libnvmmlite_audio.so:system/lib/libnvmmlite_audio.so \
     vendor/toshiba/tostab03/proprietary/lib/libDmiService.so:system/lib/libDmiService.so \
+    vendor/toshiba/tostab03/proprietary/lib/libmllite.so:system/lib/libmllite.so \
     vendor/toshiba/tostab03/proprietary/lib/libnvhdmi3dplay_jni.so:system/lib/libnvhdmi3dplay_jni.so \
     vendor/toshiba/tostab03/proprietary/lib/libnvddk_2d_v2.so:system/lib/libnvddk_2d_v2.so \
     vendor/toshiba/tostab03/proprietary/lib/libnvmm_camera.so:system/lib/libnvmm_camera.so \
