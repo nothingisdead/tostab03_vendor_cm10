@@ -59,14 +59,14 @@ PRODUCT_COPY_FILES += \
     vendor/toshiba/tostab03/proprietary/lib/libnvrm.so:system/lib/libnvrm.so \
     vendor/toshiba/tostab03/proprietary/lib/libnvcpud_client.so:system/lib/libnvcpud_client.so \
     vendor/toshiba/tostab03/proprietary/lib/libnvmm_misc.so:system/lib/libnvmm_misc.so \
-    vendor/toshiba/tostab03/proprietary/lib/hw/gps.tostab03.so:system/lib/hw/gps.tostab03.so \
-    vendor/toshiba/tostab03/proprietary/lib/hw/sensors.tostab03.so:system/lib/hw/sensors.tostab03.so \
+    vendor/toshiba/tostab03/proprietary/lib/hw/lights.tegra.so:system/lib/hw/lights.tegra.so \
     vendor/toshiba/tostab03/proprietary/lib/hw/nfc.tegra.so:system/lib/hw/nfc.tegra.so \
     vendor/toshiba/tostab03/proprietary/lib/hw/gralloc.tegra.so:system/lib/hw/gralloc.tegra.so \
     vendor/toshiba/tostab03/proprietary/lib/hw/hwcomposer.tegra.so:system/lib/hw/hwcomposer.tegra.so \
     vendor/toshiba/tostab03/proprietary/lib/hw/gralloc.default.so:system/lib/hw/gralloc.default.so \
     vendor/toshiba/tostab03/proprietary/lib/hw/camera.tegra.so:system/lib/hw/camera.tegra.so \
-    vendor/toshiba/tostab03/proprietary/lib/hw/lights.tostab03.so:system/lib/hw/lights.tostab03.so \
+    vendor/toshiba/tostab03/proprietary/lib/hw/sensors.tegra.so:system/lib/hw/sensors.tegra.so \
+    vendor/toshiba/tostab03/proprietary/lib/hw/gps.tegra.so:system/lib/hw/gps.tegra.so \
     vendor/toshiba/tostab03/proprietary/lib/libnvmm_asfparser.so:system/lib/libnvmm_asfparser.so \
     vendor/toshiba/tostab03/proprietary/lib/libnvodm_dtvtuner.so:system/lib/libnvodm_dtvtuner.so \
     vendor/toshiba/tostab03/proprietary/lib/libi2c_ctl.so:system/lib/libi2c_ctl.so \
@@ -123,6 +123,7 @@ PRODUCT_COPY_FILES += \
     vendor/toshiba/tostab03/proprietary/lib/libnvmm_parser.so:system/lib/libnvmm_parser.so \
     vendor/toshiba/tostab03/proprietary/lib/libnvmm_msaudio.so:system/lib/libnvmm_msaudio.so \
     vendor/toshiba/tostab03/proprietary/lib/libnvdispmgr_d.so:system/lib/libnvdispmgr_d.so \
+    vendor/toshiba/tostab03/proprietary/lib/libstagefrighthw.so:system/lib/libstagefrighthw.so \
     vendor/toshiba/tostab03/proprietary/lib/libGLESv2_dbg.so:system/lib/libGLESv2_dbg.so \
     vendor/toshiba/tostab03/proprietary/lib/libnvmm_video.so:system/lib/libnvmm_video.so \
     vendor/toshiba/tostab03/proprietary/lib/libnvos.so:system/lib/libnvos.so \
