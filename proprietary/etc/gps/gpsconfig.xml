@@ -4,52 +4,90 @@
 <hal
     acPortName="/dev/ttyHS1"
     lBaudRate="115200"
-    cLogEnabled="true"
-    acLogDirectory="/data/gps"
-    ltoFileName="lto.dat"
+
+    cLogEnableInitState="true"
+    cLogEnabled="false"
+    acLogDirectory="/data/gps/log"
+
+    acNmeaOutName="/data/gpspipe"
+
     ctrlPipe="/data/gps/glgpsctrl"
-    lcsApiSockName="/dev/socket/gps"
+    acNvStoDir="/data/gps/"
+
+    ltoFileName="lto.dat"
+
     gpioNStdbyPath="/sys/class/gpio/gpio203/value"
+    gpioDelayMs="100"
 
-    acSuplLogFullName="/data/gps/supllog.txt"
-    arp-supl-enable="true"
-    arp-supl-cap-msb="true"
-    arp-supl-cap-msa="true"
+    ReAidingType="0"
+    ReAidingRetryIntervalSec="20"
+    ReAidingIntervalSec="1200"
+
+    LbsEnable="true"
+    LbsLocal="false"
+    LbsServer="bcmls2.glpals.com"
+    LbsPort="7275"
+    LbsSyncTimeSec="60"
+    LbsSyncLto="true"
+    LbsSyncCells="true"
+
+    arp-supl-enable="false"
+    arp-supl-cap-msb="false"
+    arp-supl-cap-msa="false"
     arp-supl-cap-ecid="false"
-    arp-supl-use-apn="false"
-    acSuplServer="supl.google.com"
+    enhanced-assisted="false"
+    arp-supl-use-apn="true"
+    acSuplServer="www.spirent-lcs.com"
     SuplPort="7275"
+    tlsCertPath="/system/bin/gpsd/"
+    TISEnabled="false"
+    RILEnabled="true"
 
-    LbsEnable="false"
+    acEEDir="/data/gps/"
+    acEEFileName="cbee.cbee"
+    arp-cbee-write-nvmem-on-new-be="true"
+    arp-cbee-signal-cbeegen-on-new-be="true"
+    arp-cbee-cbeegen-app-path="/data/gps/cbee_gen"
+    arp-cbee-cbeegen-app-param="-debug -ln=/data/gps/log/cbee_gen_log.txt"
+
+    cp-enhanced-assisted="false" 
+    LPmode="false" 
+    cp-cold-start="false" 
+    cp-guard-time-sec="1"
+
+    SensorsEnable="false"
+    SensorsMask="0F"
+    SensorsLog="true"
+    SensorsType="5"
+    SensorsMoEnable="true" 
+    SensorsTurnEnable="false"
+    SensorsRawAcclGyroEnable="false" 
+    
+    SensorsStepEnable="false"
+    SensorsAcclInRunBiasCal="true" 
+    SensorsEstBiasInWalking="true" 
+    req_pos.acc="1000"
+
+    lcsApiSockName="/dev/socket/gps"
 />
 
 <!-- GPS configuration with standalone 16.8 MHz TCXO  -->
 <gll
-    LogPriMask="LOG_DEBUG"
-    LogFacMask="LOG_GLLAPI | LOG_NMEA | LOG_RAWDATA"
-    FrqPlan="FRQ_PLAN_26MHZ_2PPM"
-    RfType="GL_RF_4751_DANUBE"
+    LogPriMask="LOG_INFO"
+    LogFacMask="LOG_GLLAPI | LOG_NMEA"
+    FrqPlan="FRQ_PLAN_26MHZ_2PPM"   
+    RfType="GL_RF_4751_DANUBE_EXT_LNA"   
+    WarmStandbyTimeout1Seconds="0"
+    WarmStandbyTimeout2Seconds="0"
 />
 
-<!-- GPS configuration for with 16.8 MHz TCXO
-     and CNTIN connected to the clock with 100 ppb uncertainty
--->
-<!--gll
-    LogPriMask="LOG_DEBUG"
-    LogFacMask="LOG_GLLAPI | LOG_NMEA | LOG_RAWDATA"
-    FrqPlan="FRQ_PLAN_16_8MHZ_2PPM_10MHZ_100PPB"
-    RfType="GL_RF_BARRACUDA_EXT_LNA"
-/-->
+<gll
+    pps-enable="false" 
+    pps-offset-ms="0" 
+    pps-width-ns="100" 
+/>
 
-<!-- GPS configuration for with 16.8 MHz TCXO
-     and CNTIN connected to the clock with 300 ppb uncertainty
--->
-    <!--gll
-    LogPriMask="LOG_DEBUG"
-    LogFacMask="LOG_GLLAPI | LOG_NMEA | LOG_RAWDATA"
-    FrqPlan="FRQ_PLAN_16_8MHZ_2PPM_10MHZ_300PPB"
-    RfType="GL_RF_BARRACUDA_EXT_LNA"
-/-->
+<!-- List of jobs can be performed by the GPS controller    -->
 
 <!-- Periodic Position Fix using default settings -->
 <job id="Periodic">
@@ -61,14 +99,44 @@
 <!-- Periodic Position with the ROM almanac ignored for simulator testing -->
 <job id="Simulator_Periodic">
     <task id="cont" repeat="1">
-      <startup ignore_rom_alm="true" />
-      <req_pos validfix="2000" duration_sec="4500"/>
+        <startup ignore_rom_alm="true" />
+        <req_pos validfix="2000" duration_sec="4500"/>      
+    </task>
+</job>
+
+<!-- This job must be performed before any systematic tests  -->
+<job id="CollectAlmanac">
+    <task repeat="1">
+        <startup
+            ignore_osc="true"
+            ignore_rom_alm="true"
+            ignore_ram_alm="true"
+            ignore_pos="true"
+            ignore_nav="true"
+            ignore_time="true"
+        />
+        <req_pos validfix="800"/>
+    </task>
+</job>
+
+<!-- This job must be performed every time the GPS simulator scenario is reset  -->
+<job id="CollectEphemeris">
+    <task repeat="1">
+        <startup
+            ignore_osc="true"
+            ignore_rom_alm="true"
+            ignore_ram_alm="true"
+            ignore_pos="true"
+            ignore_nav="true"
+            ignore_time="true"
+        />
+        <req_pos validfix="200"/>
     </task>
 </job>
 
 <!-- Repetetive cold starts -->
 <job id="Cold_Starts">
-    <task repeat="1000000">
+    <task repeat="100">
            <startup
                      ignore_osc="false"
                      ignore_rom_alm="false"
@@ -83,7 +151,7 @@
 
 <!-- Repetetive cold starts with the ROM almanac ignored for simulator testing -->
 <job id="Simulator_Cold_Starts">
-    <task repeat="1000000">
+    <task repeat="100">
            <startup
                      ignore_osc="false"
                      ignore_rom_alm="true"
@@ -101,42 +169,39 @@
      This simulates GPS receiver start after it was left off for more that 4 hours
 -->
 <job id="Warm_Starts">
-    <task repeat="1000000">
-           <startup ignore_nav="true"/>
-    <req_pos validfix="1"/>
-    </task>
-</job>
-
-<!-- Repetetive warm starts  performed on GPS simulator -->
-<job id="Simulator_Warm_Starts">
-    <task repeat="1000000">
-       <startup
-                    ignore_rom_alm="true"
-                    ignore_nav="true"
-       />
-       <req_pos validfix="1"/>
-    </task>
-</job>
-
-<!-- Repetetive hot starts  -->
-<job id="Hot_Starts">
-    <task repeat="1000000">
+    <task repeat="100">
+        <startup ignore_nav="true"/>
         <req_pos validfix="1"/>
     </task>
 </job>
 
-<!-- This job must be performed every time the GPS simulator scenarion is reset  -->
-<job id="CollectEphemeris">
-    <task repeat="1">
-           <startup
-                     ignore_osc="true"
-                     ignore_rom_alm="true"
-                     ignore_ram_alm="true"
-                     ignore_pos="true"
-                     ignore_nav="true"
-                     ignore_time="true"
-           />
-        <req_pos validfix="200"/>
+<!-- Systematic Test: Repetetive warm starts performed on GPS simulator -->
+<job id="Simulator_Warm_Starts">
+    <task repeat="100">
+        <startup 
+            ignore_rom_alm="true"
+            ignore_nav="true" 
+        />
+        <req_pos validfix="1"/>
+    </task>
+</job>
+
+<!-- Systematic Test: Repetetive hot starts  -->
+<job id="Hot_Starts">
+    <task repeat="100">
+        <req_pos validfix="1"/>
+    </task>
+</job>
+
+<!-- Systematic Test: Repetitive far starts -->
+<job id="Far_Starts">
+    <task repeat="100">
+        <!-- Instructs GLL to ignore all elements stored in NVRAM listed below -->
+        <startup 
+            ignore_nav="true" 
+            pos_error="true"
+        />
+        <req_pos validfix="1" />
     </task>
 </job>
 
@@ -228,6 +293,26 @@
                    duration_sec="200"
            />
      </task>
+</job>
+
+<job id="Factory_Low_SNR_Acquisition">
+    <task id="test" repeat="1">
+        <startup
+            ignore_osc="false"
+            ignore_rom_alm="true"
+            ignore_ram_alm="true"
+            ignore_pos="true"
+            ignore_nav="true"
+            ignore_time="true"
+        />
+        <req_ftest
+            PRN="1"
+            GL_FACT_TEST_MODE="GL_FACT_TEST_CONT"
+            GL_FACT_TEST_ITEMS="GL_FACT_TEST_WER" 
+            avg_int_sec="10" 
+            duration_sec="200"
+        />
+    </task>
 </job>
 
 </glgps>

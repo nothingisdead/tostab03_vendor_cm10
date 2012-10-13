@@ -136,10 +136,15 @@ PRODUCT_COPY_FILES += \
     vendor/toshiba/tostab03/proprietary/lib/libnvodm_imager.so:system/lib/libnvodm_imager.so \
     vendor/toshiba/tostab03/proprietary/lib/libnvmm_manager.so:system/lib/libnvmm_manager.so \
     vendor/toshiba/tostab03/proprietary/lib/libnvtestresults.so:system/lib/libnvtestresults.so \
+    vendor/toshiba/tostab03/proprietary/vendor/lib/libWVStreamControlAPI_L1.so:system/vendor/lib/libWVStreamControlAPI_L1.so \
+    vendor/toshiba/tostab03/proprietary/vendor/lib/drm/libdrmwvmplugin.so:system/vendor/lib/drm/libdrmwvmplugin.so \
+    vendor/toshiba/tostab03/proprietary/vendor/lib/libwvm.so:system/vendor/lib/libwvm.so \
+    vendor/toshiba/tostab03/proprietary/vendor/lib/libwvdrm_L1.so:system/vendor/lib/libwvdrm_L1.so \
     vendor/toshiba/tostab03/proprietary/vendor/firmware/fw_bcm4329_apsta.bin:system/vendor/firmware/fw_bcm4329_apsta.bin \
     vendor/toshiba/tostab03/proprietary/vendor/firmware/fw_bcm4329.bin:system/vendor/firmware/fw_bcm4329.bin \
     vendor/toshiba/tostab03/proprietary/app/com.eclipsim.gpsstatus2-1.apk:system/app/com.eclipsim.gpsstatus2-1.apk \
     vendor/toshiba/tostab03/proprietary/bin/immvibed:system/bin/immvibed \
+    vendor/toshiba/tostab03/proprietary/bin/get-gps-lto:system/bin/get-gps-lto \
     vendor/toshiba/tostab03/proprietary/bin/dmiserver:system/bin/dmiserver \
     vendor/toshiba/tostab03/proprietary/bin/setup_fs:system/bin/setup_fs \
     vendor/toshiba/tostab03/proprietary/bin/glgps_nvidiaTegra2android:system/bin/glgps_nvidiaTegra2android \
