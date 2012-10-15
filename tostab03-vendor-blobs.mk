@@ -63,7 +63,6 @@ PRODUCT_COPY_FILES += \
     vendor/toshiba/tostab03/proprietary/lib/hw/nfc.tegra.so:system/lib/hw/nfc.tegra.so \
     vendor/toshiba/tostab03/proprietary/lib/hw/gralloc.tegra.so:system/lib/hw/gralloc.tegra.so \
     vendor/toshiba/tostab03/proprietary/lib/hw/hwcomposer.tegra.so:system/lib/hw/hwcomposer.tegra.so \
-    vendor/toshiba/tostab03/proprietary/lib/hw/gralloc.default.so:system/lib/hw/gralloc.default.so \
     vendor/toshiba/tostab03/proprietary/lib/hw/camera.tegra.so:system/lib/hw/camera.tegra.so \
     vendor/toshiba/tostab03/proprietary/lib/hw/sensors.tegra.so:system/lib/hw/sensors.tegra.so \
     vendor/toshiba/tostab03/proprietary/lib/hw/gps.tegra.so:system/lib/hw/gps.tegra.so \
